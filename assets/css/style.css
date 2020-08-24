@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   color: black;
   background: url("../img/field-bg.jpg") top center no-repeat;
   background-size: cover;
@@ -85,7 +85,6 @@ section {
 --------------------------------------------------------------*/
 
 #main {
-  /* position: relative; */
   height: 100%;
   width: 100%;
 }
@@ -95,15 +94,14 @@ section {
 }
 .main .content h2 {
   font-weight: 700;
-  font-size: 80px;
-  line-height: 80px;
-  /* margin: 20px 0; */
+  font-size: 100px;
+  line-height: 100px;
   letter-spacing: 2px;
 }
 .main .content h3 {
   font-weight: 700;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 75px;
+  line-height: 75px;
   letter-spacing: 2px;
 }
 
@@ -121,9 +119,13 @@ section {
 }
 
 .main .container .col img {
-  width: 30%;
-  margin: 10%;
+  height: 40%;
+  margin: 10% 5%;
 }
+
+/* .main .container .col img:first-child {
+  height: 50%;
+} */
 
 /*--------------------------------------------------------------
 # Footer
