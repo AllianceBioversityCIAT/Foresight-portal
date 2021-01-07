@@ -1,0 +1,69 @@
+body {
+  header.site-header {
+    nav {
+      .navbar-toggler {
+        border: 0;
+        outline: none;
+
+        @include respond-below( md ) {
+          margin-left: auto;
+        }
+
+        .navbar-toggler-icon {
+          background-image: url(static/images/toggler-icon.png);
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .navbar-collapse {
+        .menu-main-menu-container {
+          margin-left: auto;
+
+          .navbar-nav {
+            background-color: #FFC84F;
+            border-radius: 10px;
+            padding: .5rem;
+            box-shadow: 0 5px 16px -12px #4d4d4d;
+
+            @include respond-below( md ) {
+              margin: 0;
+            }
+
+            li.current-menu-item, li.menu-item {
+              @include respond-below( md ) {
+                padding: .5rem;
+              }
+
+              a {
+                position: relative;
+                color: #171407;
+                font-weight: bold;
+                font-size: 1rem;
+                padding: .5rem 1rem;
+
+                @include respond-below( md ) {
+                  padding-left: 0;
+                }
+
+                &:hover {
+                  color: #443908;
+                }
+              }
+            }
+
+            li.current-menu-item {
+              a {
+                font-weight: 900;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    nav.scrolled {
+
+    }
+  }
+}

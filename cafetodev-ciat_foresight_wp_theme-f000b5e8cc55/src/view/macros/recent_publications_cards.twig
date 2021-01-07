@@ -1,0 +1,50 @@
+{% macro recent_publications_cards (title, description, image_url, id_modal,foresight_images_default_publication) %}
+
+	<div class="foresight-card">
+		<div class="background-img-card" style="background: url( '{{image_url|resize(342,210)|default(foresight_images_default_publication) }}' ) no-repeat;">
+			<div class="foresight-box">
+				<h5>{{ title }}</h5>
+			</div>
+		</div>
+		<p class="foresight-card-text p-0 mt-4">
+			{{description}}
+		</p>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn foresight-btn-card mt-4" data-toggle="modal" data-target="#{{id_modal}}">
+			Know More
+		</button>
+	</div>
+
+{% endmacro %}
+
+
+{% macro modal_recent_publications (title, description, image_url, id_modal, foresight_images_default_publication) %}
+	<div class="modal fade" id="{{id_modal}}" tabindex="-1" role="dialog" aria-labelledby="{{id_modal}}Title" aria-hidden="true">
+			<div class="modal-dialog  modal-xl modal-dialog-centered" role="document">
+				<div class="modal-content p-4">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-12">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="col-sm-12">
+                                <div class="foresight-container-image-modal" style="background: url( {{ image_url|resize(350,320)|default(foresight_images_default_publication) }}) center no-repeat">
+                                </div>
+								<div class="foresight-container-title-modal" class="mb-3">
+									<label class="foresight-publication-model-title">
+										{{title}}
+									</label>
+									<hr class="foresight-publication-hr my-0  mb-3">
+								</div>
+								<div>
+									{{ description }}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endmacro %}

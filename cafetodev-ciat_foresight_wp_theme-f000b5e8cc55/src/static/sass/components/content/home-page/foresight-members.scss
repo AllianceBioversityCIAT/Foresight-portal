@@ -1,0 +1,59 @@
+body {
+  #foresight-members-section {
+    background-color: #F3F3F3;
+    margin-bottom: 10rem;
+
+    #foresight-members {
+      position: relative;
+
+      #img-members{
+        box-shadow: 0 2.5px 8px 15px rgba(0,0,0,.2);
+      }
+
+      .foresight-members-img-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 30%;
+        background-size: cover !important;
+        background-position: center !important;
+
+        @include respond-below( sm ) {
+          left: 0;
+        }
+      }
+
+      .foresight-members-container {
+        padding: 6rem 1rem;
+
+        .foresight-members-row {
+
+          .foresight-members-info {
+            align-self: flex-end;
+
+            h2 {
+              font-size: 2.5rem;
+              font-weight: bold;
+              color: $color__foresight_white;
+            }
+
+            hr {
+              margin-left: 0;
+              border: 4px solid $color__foresight_primary;
+              border-radius: 10px;
+
+              @include respond-below( sm ) {
+                width: 20%;
+              }
+            }
+
+            p {
+              color: $color__foresight_white;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

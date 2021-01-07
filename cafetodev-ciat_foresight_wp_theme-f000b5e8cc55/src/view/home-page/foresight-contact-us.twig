@@ -1,0 +1,53 @@
+<section id="contact-us-section">
+	<div class="container">
+		<div class="row">
+			<div clas="col-md-12">
+				<h2 id="foresight-contact-us-title" class="foresight-contact-us-title">
+					{{ function('customize_theme_mod', 'foresight_contact_us_title' ) }}
+				</h2>
+				<hr class="foresight-contact-us-hr">
+			</div>
+			<div class="col-md-12">
+				{% if success_email %}
+                        <div class="alert alert-success"  role="alert">
+                        Thank you for contacting us, we received your message 
+                        </div>
+                {% endif %}
+				<form name="form_contact_foresight" id="form_contact_foresight" method="POST" action="/wp-json/foresight/v1/foresight_contact_us">
+					<div id="form_contact">
+						<div class="form-row mt-5">
+							<div class="col-lg-6">
+								<label for="foresight_name" class="foresight-form-label">Name</label>
+								<input id="foresight_name" name="foresight_name" type="text" class="form-control foresight-inputs" required>
+							</div>
+							<div class="col-lg-6">
+								<label for="email" class="cafeto-form-label">E-mail</label>
+								<input id="email" name="foresight_email" type="email" class="form-control foresight-inputs" required>
+							</div>
+						</div>
+						<div class="form-row mt-4">
+							<div class="col-lg-12">
+								<label for="subject" class="cafeto-form-label">Subject</label>
+								<input id="subject" name="foresight_subject" type="text" class="form-control foresight-inputs" required>
+							</div>
+						</div>
+						<div class="form-row mt-4 mb-5">
+							<div class="col-lg-12">
+								<label for="foresight_help_you" class="foresight-form-label">How can we help you?
+								</label>
+								<textarea rows="6" class="form-control" id="foresight_help_you" name="foresight_help_you" required></textarea>
+								<input type="hidden" name="contact_location" value="{{ page_link }}">
+							</div>
+						</div>
+						<div class="col-md-12 mb-5 p-0 text-center">
+							<button type="submit" id="foresight_form_btn" class="btn foresight_form_btn">
+								<span class="spinner-border spinner-border-sm" id="foresight_contact_form_load" role="status" aria-hidden="true" style="display: none;"></span>
+								Send
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<section>

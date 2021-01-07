@@ -1,0 +1,44 @@
+image:
+  name: sebas932/wp-ci-deployment
+
+definitions:
+  steps:
+    - step: &build
+        name: Build
+        script:
+          # - composer install --no-dev
+          - npm install
+          - gulp build
+        artifacts:
+          - build/**
+        caches:
+          # - composer
+          - node
+    - step: &deploy
+        name: Deploy
+        script:
+          # REMOVE GIT FROM BUILD DIR SO WE CAN PIPE TO WPENGINE'S GIT
+          - rm -rf .git
+          # ADD FAKE USER DETAILS, OTHERWISE GIT COMPLAINS
+          - git config --global user.email "da-support@cafetosoftware.com"
+          - git config --global user.name "Digital Agency"
+          # COMMIT THE COMPLETED BUILD ARTEFACT TO WPENGINE'S GIT
+          - cd .. && mkdir deploy && cd deploy/ && git clone $GIT_REMOTE .
+          - rm -rf * && mkdir -p wp-content/themes
+          - mv $BITBUCKET_CLONE_DIR/build/* wp-content/themes
+          - git add . && git commit -m 'Deploy from Bitbucket'
+          - git push origin master
+pipelines:
+  branches:
+    develop:
+      - step: *build
+      - step:
+          <<: *deploy
+          name: Deploy to Development
+          deployment: Development
+    master:
+      - step: *build
+      - step:
+          <<: *deploy
+          name: Deploy to Production
+          deployment: Production

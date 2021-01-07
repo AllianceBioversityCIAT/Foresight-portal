@@ -1,0 +1,116 @@
+html {
+  margin: 0 !important;
+
+  body#body-coming-soon {
+    font-family: 'Montserrat', sans-serif !important;
+    background-size: cover !important;
+    position: relative;
+    height: 100vh;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      background: rgba(34, 34, 34, 0.8);
+    }
+
+    #page {
+      height: 100%;
+      width: 100%;
+
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      #main-content {
+        padding: 60px 0;
+        height: 100%;
+        width: 100%;
+
+        .container {
+          @include respond-below( xl ) {
+            padding: 0;
+          }
+
+          .row {
+            h2 {
+              font-size: 6rem;
+              line-height: 100px;
+
+              @include respond-below( sm ) {
+                font-size: 5rem;
+              }
+
+              @include respond-below( xs ) {
+                font-size: 3.5rem;
+                line-height: normal;
+              }
+
+              @include respond-below( xl ) {
+                font-size: 2.5rem;
+              }
+            }
+
+            h3 {
+              font-size: 4.5rem;
+
+              @include respond-below( sm ) {
+                font-size: 4rem;
+              }
+
+              @include respond-below( xs ) {
+                font-size: 2.5rem;
+              }
+
+              @include respond-below( xl ) {
+                font-size: 1.5rem;
+              }
+            }
+
+            h2, h3 {
+              letter-spacing: 2px;
+              text-align: center;
+              color: $color__foresight_white;
+              text-transform: uppercase;
+            }
+
+            .col-sm-6 {
+              @include respond-below( xs ) {
+                justify-content: center !important;
+              }
+
+              img {
+                height: 40%;
+                margin: 10% 5%;
+
+                @include respond-below( xs ) {
+                  margin: 1rem 0;
+                  height: 10rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      footer {
+        background: rgba(19, 19, 19, 0.4);
+        padding: 30px 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        .copyright {
+          text-align: center;
+          font-size: 1rem;
+          color: $color__foresight_white;
+        }
+      }
+    }
+  }
+}

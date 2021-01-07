@@ -1,0 +1,103 @@
+body {
+  section#foresight-participation {
+    margin-bottom: 10rem;
+
+    .container-foresight-participation {
+
+      .content-foresight-participation {
+        .foresight-participation-title {
+          font-size: 3rem;
+          color: $color__foresight_secondary;
+          font-weight: bold;
+        }
+
+        .foresight-participation-hr {
+          width: 8%;
+          margin-left: 0;
+          border: 4px solid $color__foresight_primary;
+          border-radius: 10px;
+        }
+      }
+
+      .foresight-participation-content-icons {
+        width: 100%;
+        text-align: center;
+
+        .foresight-participation-icon {
+          position: relative;
+          display: inline-block;
+          padding: 2rem;
+          text-align: center;
+          margin-bottom: 3rem;
+
+          &:focus {
+            outline: none;
+          }
+
+          img {
+            height: 150px;
+          }
+
+          .foresight-participation-data {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            .foresight-participation-info {
+              width: 100%;
+              z-index: 20;
+
+              p {
+                margin-top: 1rem;
+                color: transparent;
+                font-size: 1rem;
+              }
+            }
+
+            &:before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              z-index: 10;
+              background-color: transparent;
+              transition: all .5s;
+            }
+
+            &:hover {
+              &:before {
+                content: "";
+                background-color: #343333;
+                opacity: .67;
+              }
+
+              .foresight-participation-info {
+                p {
+                  color: $color__foresight_white;
+                  font-size: 1.5rem;
+                  margin: 0;
+                  padding: 0 .5rem;
+                }
+
+                p:first-child {
+                  font-weight: bold;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+
+        .slick-dots {
+          li button::before {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

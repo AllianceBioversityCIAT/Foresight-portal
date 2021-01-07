@@ -1,0 +1,26 @@
+{% import "./view/macros/recent_publications_cards.twig" as cards_publications %}
+
+<section id="publications-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 id="foresight-publication-title" class="foresight-publication-title">
+					{{foresight_title_publications_recent}}
+				</h2>
+				<hr class="foresight-publication-hr">
+			</div>
+			{% for post in foresight_posts_publication %}
+				{{ cards_publications.modal_recent_publications(post.post_title, post.post_content, post.thumbnail.src, post.slug,foresight_images_default_publication) }}
+			{% endfor %}
+
+			<div class="col-md-12">
+				<div class="foresight-card-slick col-md-12" data-slick='3'>
+					{% for post in foresight_posts_publication %}
+						{% set image_url = function("get_the_post_thumbnail_url", post.ID) %}
+						{{ cards_publications.recent_publications_cards(post.post_title, post.preview.length(20).force.read_more(false), post.thumbnail.src, post.slug,foresight_images_default_publication) }}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

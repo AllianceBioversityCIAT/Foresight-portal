@@ -1,0 +1,22 @@
+<footer id="ciat-foresight-footer-section" class="site-footer">
+	<div id="ciat-foresight-footer-container" class="container">
+		<div class="row site-info">
+			<div id="foresight-footer-info" class="col-md-8 foresight-footer-info">
+				<p><a href="mailto: {{ function('customize_theme_mod', 'foresight-footer-contact-email-one' ) }}">
+						{{ function('customize_theme_mod', 'foresight-footer-contact-one' ) }}
+					</a></p>
+				<p><a href="mailto: {{ function('customize_theme_mod', 'foresight-footer-contact-email-two' ) }}">
+						{{ function('customize_theme_mod', 'foresight-footer-contact-two' ) }}
+					</a></p>
+			</div>
+			<div class="col-md-4 footer-content-social">
+				{{ function('ciat_foresight_social_icons') }}
+			</div>
+		</div>  <!-- .site-info -->
+	</div>
+	<div id="foresight-footer-container-fluid" class="container-fluid">
+		<div class="footer-content-copyright">
+			<p>{{ function('customize_theme_mod', 'foresight-footer-copyright' ) }}</p>
+		</div>
+	</div>
+</footer><!-- #colophon -->

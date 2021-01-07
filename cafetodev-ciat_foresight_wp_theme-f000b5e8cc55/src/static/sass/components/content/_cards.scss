@@ -1,0 +1,89 @@
+.foresight-card {
+        position: relative;
+        width: 340px;
+        overflow: hidden;
+        height: auto;
+        text-align: left;
+        transition: all 0.25s;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        max-width: 80%;
+
+        @include respond-between( md, lg ) {
+          width: 290px;
+        }
+
+        @include respond-between( sm, md ) {
+          width: 310px;
+        }
+
+        @include respond-below( sm ) {
+          width: 100%;
+          padding: 1rem;
+        }
+
+        &:focus {
+          outline: none;
+        }
+        & .foresight-card-text{
+          width: 90%;
+        }
+        & .background-img-card {
+          position: relative;
+          height: 210px;
+          max-width: 95%;
+          background-size: cover !important;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: #000000;
+            opacity: 0.5;
+          }
+
+          .foresight-box {
+            display: flex;
+            align-items: flex-end;
+            height: 95%;
+            z-index: 20;
+            position: relative;
+
+            & h5 {
+              padding: 1rem 1rem 0;
+              color: $color__foresight_white;
+              font-weight: bold;
+            }
+          }
+        }
+
+        & .foresight-card-title {
+          position: relative;
+          height: 70px;
+
+          h3 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            font-weight: 700;
+            margin: 0;
+            padding: 0 2rem;
+          }
+        }
+
+        & p{
+          padding: 1rem 0 4rem;
+          font-size: 1rem;
+        }
+
+        button.foresight-btn-card {
+            background-color: $color__foresight_primary !important;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 10px;
+            width: 50%;
+        }
+      }

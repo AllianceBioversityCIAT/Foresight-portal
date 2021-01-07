@@ -1,0 +1,12 @@
+body button.foresight-btn-card {
+    background-color: $color__foresight_primary;
+    color: #fff;
+    &:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 1.5px 8px 1px rgba(0,0,0,.2);
+        color: #fff;
+    }
+    @include respond-below( md ) {
+        font-size: 0.8rem;
+      }
+}

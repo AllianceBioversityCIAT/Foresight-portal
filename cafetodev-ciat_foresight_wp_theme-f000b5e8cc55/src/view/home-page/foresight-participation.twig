@@ -1,0 +1,25 @@
+<section id="foresight-participation">
+	<div class="container container-foresight-participation">
+		<div class="row">
+			<div class="col-md-12 content-foresight-participation">
+				<h2 id="foresight-participation-title" class="foresight-participation-title">
+					{{ function('customize_theme_mod', 'foresight-participation-title' ) }}
+				</h2>
+				<hr class="foresight-participation-hr">
+			</div>
+		</div>
+		<div class="foresight-participation-content-icons" data-slick="5">
+			{% for item in foresight_cgiar_partner_page %}
+				<div class="foresight-participation-icon">
+					<img src="{{ item.thumbnail.src }}">
+					<div class="foresight-participation-data">
+						<div class="foresight-participation-info">
+							<p>Focal Point:</p>
+							<p>{{ item.meta('partner_contact_point') }}</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,60 @@
+#publications-section{
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+    .foresight-publication-title {
+      font-size: 3rem;
+      color: #707070;
+      font-weight: bold;
+    }
+    .foresight-publication-model-title{
+      font-size: 1.5rem;
+      color: #707070;
+      font-weight: bold;
+      line-height: 85%;
+    }
+
+    & p{
+      text-align: justify;
+    }
+
+    .foresight-container-image-modal{
+      float:left; 
+      height: 20rem; 
+      min-width: 33%; 
+      margin-right: 5%;
+      background-size:cover !important;
+      @include respond-below( md ) {
+        float:none; 
+        width: 100%;
+        margin-bottom: 2%; 
+      }
+    }
+    .foresight-container-title-modal{
+      float:left; 
+      width: 62%;
+      @include respond-below( md ) {
+        text-align: center;
+        float:none; 
+        width: 100%; 
+      }
+    }
+    
+      .foresight-publication-hr {
+        width: 5%;
+        margin-left: 0;
+        border: 4px solid #B2E584;
+        border-radius: 10px;
+      }
+
+      .foresight-card-text{
+          min-height: 6rem;
+      }
+
+      .slick-prev:before, .slick-next:before{
+        color: $color__foresight_primary !important;
+        box-shadow: 8px 8px 6px rgba(0,0,0,.2);
+        border-radius: 27px;
+      }
+
+
+}

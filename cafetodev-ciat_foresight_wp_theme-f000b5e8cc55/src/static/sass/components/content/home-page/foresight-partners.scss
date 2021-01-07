@@ -1,0 +1,54 @@
+body {
+  #foresight-partners-section {
+    section#foresight-partners {
+      background-size: cover!important;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        background: rgba(34,34,34,.8);
+      }
+
+      .container-foresight-partners {
+        .row-foresight-partners {
+          padding-top: 6rem;
+          padding-bottom: 10rem;
+
+          .foresight-partners-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: $color__foresight_white;
+            padding-right: 4rem;
+
+            @include respond-below( sm ) {
+              padding-right: 0;
+            }
+          }
+
+          .foresight-partners-hr {
+            width: 10%;
+            margin-left: 0;
+            border: 4px solid #FFC84F;
+            border-radius: 10px;
+            padding-right: 4rem;
+
+            @include respond-below( sm ) {
+              padding-right: 0;
+            }
+          }
+
+          p, li {
+            font-size: 1rem;
+            color: $color__foresight_white;
+          }
+        }
+      }
+    }
+  }
+}
